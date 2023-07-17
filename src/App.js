@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
+import ShoppingListPage from './pages/ShoppingListPage';
+import ShoppingListDetailsPage from './pages/ShoppingListDetailsPage';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
 
         <Route path='/' element={ <HomePage /> } />
+        <Route path='/shopping-lists' element={ <ShoppingListPage /> } />
+        <Route path='/shopping-lists/:listId' element={ <ShoppingListDetailsPage /> } />
 
         
       </Routes>
