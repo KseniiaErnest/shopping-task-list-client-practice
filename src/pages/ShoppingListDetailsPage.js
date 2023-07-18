@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
+import AddShoppingTask from '../components/AddShoppingTask';
+
 const API_URL = 'http://localhost:5005';
 
 export default function ShoppingListDetailsPage(props) {
@@ -32,6 +34,7 @@ export default function ShoppingListDetailsPage(props) {
         </>
       )}
 
+
       {shoppingList && shoppingList.tasks.map((task) => (
         <li key={task._id}>
           <h3>{task.task}</h3>
@@ -44,6 +47,9 @@ export default function ShoppingListDetailsPage(props) {
           <h4>{task.isComplete ? 'Yes' : 'No'}</h4>
         </li>
       ))}
+
+
+      <AddShoppingTask refreshList={getOneList} listId={listId}/>
 
       <Link to='/shopping-lists'><button>Back to the Shopping Lists</button></Link>
 
